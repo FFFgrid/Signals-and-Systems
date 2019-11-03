@@ -96,23 +96,6 @@ title('Using the positiveFFT function')
 grid
 axis([0,20,0,1.5])
 
-
-clc;clear;close all;
-fs=30;  %采样频率
-T=1/fs;
-t=0:T:2*pi;
-A=2;P=4;
-y=A*square(P*t);
-subplot(2,1,1),plot(t,y)
-title('方波信号')
-Fy=abs(fft(y,512));
-f2=fs*(0:256)/512;
-subplot(2,1,2),plot(f2,Fy(1:257))
-title('频谱图');
-set(gcf,'unit','normalized','position',[0 0 1 1]);
-set(gca,'xtick',0:0.6:8);
-axis([0,8,0 300]);
-
 %%%centeredFFT.m
 function [X,freq]=centeredFFT(x,Fs)
 %this is a custom function that helps in plotting the two-sided spectrum
@@ -134,3 +117,19 @@ freq=k/T; %the frequency axis
 X=fft(x)/N; % normalize the data
 X=fftshift(X); %shifts the fft data so that it is centered
 --------------------------------------------------------------------------------------------------------------------------------
+
+clc;clear;close all;
+fs=30;  %采样频率
+T=1/fs;
+t=0:T:2*pi;
+A=2;P=4;
+y=A*square(P*t);
+subplot(2,1,1),plot(t,y)
+title('方波信号')
+Fy=abs(fft(y,512));
+f2=fs*(0:256)/512;
+subplot(2,1,2),plot(f2,Fy(1:257))
+title('频谱图');
+set(gcf,'unit','normalized','position',[0 0 1 1]);
+set(gca,'xtick',0:0.6:8);
+axis([0,8,0 300]);
