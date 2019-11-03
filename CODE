@@ -37,8 +37,13 @@ close all
 T = 10*(1/50);
 Fs = 1000;
 dt = 1/Fs;
-t = 0:dt:T-dt;
-
+t = 0:dt:T-dt; 
+x = sawtooth(2*pi*50*t);
+plot(t,x)
+title('50 Hz sawtooth waveform');
+xlabel('t\s');
+ylabel('amplitude');
+grid on
 
 dt=0.1;
 x=-10:dt:10;
@@ -48,14 +53,6 @@ y=zeros(1,l);
 for i=1:l
 y(i)=i-round(round(i/(T/dt))*(T/dt));
 end
-
-plot(x,y) 
-x = sawtooth(2*pi*50*t);
- 
-plot(t,x)
-title('50 Hz sawtooth waveform');
-xlabel('t\s');
-ylabel('amplitude');
-grid on
+plot(x,y)
 
 
