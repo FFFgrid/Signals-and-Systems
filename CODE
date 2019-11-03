@@ -28,3 +28,22 @@ title('幅度频谱','Fontsize',8);
 xlabel('谐波次数', 'Fontsize',8);
 % End
 
+
+
+%Generate 10 periods of a sawtooth wave with a fundamental frequency of 50 Hz. The sample rate is 1 kHz.
+clear
+clc
+close all
+T = 10*(1/50);
+Fs = 1000;
+dt = 1/Fs;
+t = 0:dt:T-dt;
+x = sawtooth(2*pi*50*t);
+ 
+plot(t,x)
+title('50 Hz sawtooth waveform');
+xlabel('t\s');
+ylabel('amplitude');
+grid on
+
+
