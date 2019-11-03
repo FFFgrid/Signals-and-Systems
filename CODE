@@ -28,7 +28,7 @@ title('幅度频谱','Fontsize',8);
 xlabel('谐波次数', 'Fontsize',8);
 % End
 
-
+--------------------------------------------------------------------------------------------------------------------------------
 
 %Generate 10 periods of a sawtooth wave with a fundamental frequency of 50 Hz. The sample rate is 1 kHz.
 clear
@@ -38,6 +38,8 @@ T = 10*(1/50);
 Fs = 1000;
 dt = 1/Fs;
 t = 0:dt:T-dt; 
+--------------------------------------------------------------------------------------------------------------------------------
+
 
 %%%fft test
 clc;
@@ -131,3 +133,4 @@ freq=k/T; %the frequency axis
 %takes the fft of the signal, and adjusts the amplitude accordingly
 X=fft(x)/N; % normalize the data
 X=fftshift(X); %shifts the fft data so that it is centered
+--------------------------------------------------------------------------------------------------------------------------------
